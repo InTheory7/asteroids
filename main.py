@@ -11,6 +11,9 @@ def main():
 
     # Create the GUI window:
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    # Create the clock:
+    clock = pygame.time.Clock()
+    dt = 0      # Delta time
     
     # Game Loop
     while True:
@@ -21,6 +24,9 @@ def main():
         
         screen.fill((0,0,0))    # Fill the screen with black (takes a tuple of RGB values).
         pygame.display.flip()   # Update the screen
+
+        # Hold each frame until 1/60th of a second has passed:
+        dt = clock.tick(60)/1000 # Return delta time in seconds
 
 if __name__ == "__main__":
     main()
