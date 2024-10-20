@@ -14,7 +14,7 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     # Create the clock:
     clock = pygame.time.Clock()
-    dt = 0      # Delta time
+    dt = 0      # Delta time, needs to be predefined for its first use
 
     # Create a player object:
     x = SCREEN_WIDTH / 2
@@ -31,6 +31,9 @@ def main():
         # Fill the screen with black (takes a tuple of RGB
             # values), i.e. clear the screen:
         screen.fill((0,0,0))
+
+        # Player control:
+        player.update(dt)
 
         # Re-render the player on the screen each frame:
         player.draw(screen)
