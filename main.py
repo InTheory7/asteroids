@@ -29,10 +29,10 @@ def main():
                 return
         
         # Fill the screen with black (takes a tuple of RGB
-            # values), i.e. clear the screen:
+            # values), i.e. clear the screen and set a background:
         screen.fill((0,0,0))
 
-        # Player control:
+        # Player control using the .update() method of the Player class:
         player.update(dt)
 
         # Re-render the player on the screen each frame:
