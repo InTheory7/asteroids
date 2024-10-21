@@ -1,4 +1,5 @@
 import pygame
+import sys
 from constants import * # Or `from constants import *`
 from player import Player
 from asteroid import Asteroid
@@ -66,6 +67,14 @@ def main():
 
         # Hold each frame until 1/60th of a second has passed:
         dt = clock.tick(60)/1000 # Return delta time in seconds
+
+        # For each asteroid in the frame...
+        for asteroid in asteroids:
+            # Check if they collide with the player...
+            if asteroid.collision(player):
+                # If they do, exit the game:
+                print("Game over!")
+                sys.exit()
 
 if __name__ == "__main__":
     main()
