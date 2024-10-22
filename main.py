@@ -82,6 +82,14 @@ def main():
                 # If they do, exit the game:
                 print("Game over!")
                 sys.exit()
+            # Check if they collide with any shots...
+            for shot in shots:
+                # Loop over each shot and check collision:
+                if asteroid.collision(shot):
+                    # If they collide, destroy both:
+                    asteroid.kill()
+                    shot.kill()
+
 
 if __name__ == "__main__":
     main()
