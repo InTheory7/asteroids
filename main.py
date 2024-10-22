@@ -4,6 +4,7 @@ from constants import * # Or `from constants import *`
 from player import Player
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
+from shot import Shot
 
 def main():
     # Initialize pygame modules:
@@ -35,6 +36,12 @@ def main():
 
     # Add AsteroidField class to the updatable group:
     AsteroidField.containers = updatable
+
+    # Create a group for the shots:
+    shots = pygame.sprite.Group()
+
+    # Add the Shot class to the shots group:
+    Shot.containers = (shots, updatable, drawable)
 
     # Create a player object:
     x = SCREEN_WIDTH / 2
